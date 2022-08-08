@@ -211,7 +211,8 @@ const createRoom = async (postId, isOffer, senderData) => {
         console.error("Failed to create chat room");
         return false;
       }
-      return { postId, sender: senderId, senderFirstName, senderLastName, senderProfilePicture, reciever: receiverId, receiverFirstName, receiverLastName, receiverProfilePicture,  messages: []  }
+      retObj = { postId, sender: senderId, senderFirstName, senderLastName, senderProfilePicture, reciever: receiverId, receiverFirstName, receiverLastName, receiverProfilePicture,  messages: []  };
+      return retObj;
     });
     return room;
   } catch (e) {
